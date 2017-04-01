@@ -175,7 +175,7 @@ let DaySlot = React.createClass({
               width: `${width}%`
             }}
             title={label + ': ' + title }
-            onClick={(e) => this._select(event, e)}
+            onClick={(e) => this._select(event, e, this)}
             className={cn('rbc-event', className, {
               'rbc-selected': _isSelected,
               'rbc-event-continues-earlier': continuesPrior,
