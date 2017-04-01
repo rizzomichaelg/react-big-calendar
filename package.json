@@ -39,7 +39,7 @@
     "test": "npm run lint",
     "tdd": "karma start",
     "release": "release",
-    "postinstall": "postinstall-build lib \"npm run build\" && rm -rf ./src/"
+    "postinstall": "postinstall-build lib \"npm run build\""
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
