@@ -9,6 +9,7 @@
   "style": "lib/css/react-big-calendar.css",
   "files": [
     "lib/",
+    "src/",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
@@ -38,7 +39,8 @@
     "test": "npm run lint",
     "tdd": "karma start",
     "release": "release",
-    "install": "npm run build"
+    "install": "npm run build",
+    "postinstall": "rm -rf src/"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
