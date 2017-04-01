@@ -9,7 +9,7 @@
   "style": "lib/css/react-big-calendar.css",
   "files": [
     "lib/",
-    "src/",
+    "./src/",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
@@ -26,20 +26,20 @@
     "clean": "rimraf lib",
     "clean:examples": "rimraf examples/static",
     "l": "lessc --autoprefix=\"ie >= 10, last 2 versions\" ",
-    "less": "npm run l src/less/styles.less ./lib/css/react-big-calendar.css && npm run less-dnd",
-    "less-dnd": "npm run l src/addons/dragAndDrop/styles.less ./lib/addons/dragAndDrop/styles.css",
-    "assets": "cpy src/less/* lib/less && npm run assets-addons",
-    "assets-addons": "cpy addons/**/*.less ../lib/ --cwd=src --parents",
-    "build": "npm run clean && babel src --out-dir lib && npm run assets && npm run less && npm run less",
+    "less": "npm run l ./src/less/styles.less ./lib/css/react-big-calendar.css && npm run less-dnd",
+    "less-dnd": "npm run l ./src/addons/dragAndDrop/styles.less ./lib/addons/dragAndDrop/styles.css",
+    "assets": "cpy ./src/less/* lib/less && npm run assets-addons",
+    "assets-addons": "cpy addons/**/*.less ../lib/ --cwd=./src --parents",
+    "build": "npm run clean && babel ./src --out-dir lib && npm run assets && npm run less && npm run less",
     "build:examples": "npm run clean:examples && webpack --config webpack/examples.config.js",
     "build:visual-test": "webpack --config webpack/visual-test.js",
     "examples": "npm run clean:examples && webpack-dev-server --inline --hot --config webpack/examples.config.js",
-    "lint": "eslint src --ext .jsx --ext .js",
+    "lint": "eslint ./src --ext .jsx --ext .js",
     "storybook": "start-storybook -p 9002",
     "test": "npm run lint",
     "tdd": "karma start",
     "release": "release",
-    "postinstall": "postinstall-build lib \"npm run build\" && rm -rf src/"
+    "postinstall": "postinstall-build lib \"npm run build\" && rm -rf ./src/"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
