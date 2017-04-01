@@ -38,7 +38,7 @@
     "test": "npm run lint",
     "tdd": "karma start",
     "release": "release",
-    "prepublish": "build"
+    "install": "npm run build"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
