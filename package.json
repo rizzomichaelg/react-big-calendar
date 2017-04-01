@@ -24,6 +24,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
+    "cleanup_post": "rm -rf src/ && cd node_modules && ls | grep -v warning| xargs rm -rf && cd ..",
     "clean:examples": "rimraf examples/static",
     "l": "lessc --autoprefix=\"ie >= 10, last 2 versions\" ",
     "less": "npm run l src/less/styles.less ./lib/css/react-big-calendar.css && npm run less-dnd",
@@ -39,7 +40,7 @@
     "test": "npm run lint",
     "tdd": "karma start",
     "release": "release",
-    "postinstall": "postinstall-build lib \"npm run build\" && rm -rf src/ && cd node_modules && ls | grep -v warning| xargs rm -rf && cd .."
+    "postinstall": "postinstall-build lib \"npm run build && npm run cleanup_post\""
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
